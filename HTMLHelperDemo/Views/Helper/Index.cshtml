@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="container">
+    @*<form action="~/Helper/Login" method="post">
+            <div>
+                <label>帳號:</label>
+                @Html.Label("帳號")
+                <input type="text" name="id" class="form-control" required />
+                @Html.TextBox("id", null, new { @class = "form-control", required = "required"})
+            </div>
+            <br />
+            <div>
+                <label>密碼:</label>
+                <input type="password" name="password" class="form-control" required />
+            </div>
+            <br />
+            <div>
+                <input type="submit" name="submit" value="登入" class="btn btn-primary" />
+            </div>
+
+        </form>*@
+    @using (Html.BeginForm("Login", "Helper", FormMethod.Post))
+    {
+        <div>
+            @Html.Label("帳號")
+            @Html.TextBox("id", null, new { @class = "form-control", required = "required" })
+        </div>
+        <br />
+        <div>
+            @Html.Label("密碼")
+            @Html.Password("password", null, new { @class = "form-control", required = "required" })
+        </div>
+        <br />
+        <div>
+            <input type="submit" name="submit" value="登入" class="btn btn-primary" />
+        </div>
+    }
+</div>
